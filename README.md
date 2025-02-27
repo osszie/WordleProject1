@@ -2,9 +2,9 @@
 
 Submitted by: **Andrew Lee**
 
-**Simple Wordle** is an app that ... [TODO] 
+**Simple Wordle** is an engaging word-guessing game where players have up to five attempts to discover the correct word. With each guess, the app provides feedback to help users refine their choices and solve the puzzle efficiently. 
 
-Time spent: **1.5** hours spent in total
+Time spent: **1.75** hours spent in total
 
 ## Required Features
 
@@ -27,8 +27,7 @@ The following **additional** features are implemented:
 
 Here is a reminder on how to embed Loom videos on GitHub. Feel free to remove this reminder once you upload your README. 
 
-[Guide]](https://imgur.com/a/ios-101-spring-25-project-1-z0dqw4M).
-
+![iOS_project1_demo_shortened](https://github.com/user-attachments/assets/24257af1-db74-4a17-a5ed-abd731d274f8)
 
 ## Notes
 

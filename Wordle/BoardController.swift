@@ -45,7 +45,7 @@ class BoardController: NSObject,
       // Tip: Use the transform property of the cell. Use transform.scaledBy to modify the scale. This should feel familiar to lab 1.
       // Checkpoint: After finishing this exercise, you should now be able to see that the board animates whenever you enter a new letter! If it's not animating, check your work on this exercise.
       // START YOUR CODE HERE
-      // ...
+      cell.transform = CGAffineTransform (scaleX:1.05, y:1.05)
       // END YOUR CODE HERE
     }, completion: { finished in
       cell.transform = CGAffineTransformIdentity
@@ -64,7 +64,32 @@ class BoardController: NSObject,
     // Tip: Checkout the public methods on LetterCell.swift
     // Checkpoint: After finishing this exercise, you should now be able to tap on the delete keyboard cell and have the last letter deleted on the board! If it's not working, check your work on this exercise and make sure deleteLastCharacter() is called properly in exercise 3.
     // START YOUR CODE HERE
-    // ...
+    cell.set(letrer:" ")
+    cell.set(style: .initial)
+
+    func isFinalGuessInRow() -> Bool {
+      return numGuesses % numItemsPerRow == 0
+  }
+   func markLettersInRow() {
+   }
+   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return numItemsPerRow * numRows
+  }
+ func collectionView(_ collectionView: UICollectionView,
+                      cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    return collectionView.dequeueReusableCell(withReuseIdentifier: "LetterCell",
+                                              for: indexPath)
+  }
+func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let spacing: CGFloat = 4.0
+    let totalSpacing = spacing * CGFloat(numItemsPerRow - 1)
+    let cellWidth = (collectionView.bounds.width - totalSpacing) / CGFloat(numItemsPerRow)
+    return CGSize(width: cellWidth, height: cellWidth)
+ 
+    
     // END YOUR CODE HERE
   }
+                         
 }

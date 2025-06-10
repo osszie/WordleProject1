@@ -30,7 +30,21 @@ class ViewController: UIViewController {
       Else, it should use the `enter` method of `boardController` and pass in the selected string as the argument.
      */
     // START YOUR CODE HERE
-    // ...
-    // END YOUR CODE HERE
+  keyboardController.didSelectString = { [weak self] str in
+      if str == DELETE_KEY {
+        self?.boardController.deleteLastCharacter()
+      } else {
+        self?.boardController.enter(str)
+      }
+    }
+
+    // Add Restart button to the navigation bar
+    let restartButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(didTapRestart))
+    navigationItem.rightBarButtonItem = restartButton
+  }
+
+  @objc func didTapRestart() {
+    boardController.reset()
+   
   }
 }

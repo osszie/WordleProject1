@@ -8,3 +8,7 @@
 import Foundation
 
 let DELETE_KEY = "DEL"
+let NUM_ROWS = 6
+let NUM_COLS = 5
+
+let CORRECT_WORD = "APPLE"
